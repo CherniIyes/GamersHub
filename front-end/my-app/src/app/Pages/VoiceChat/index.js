@@ -4,23 +4,27 @@ import React, { useState, useEffect } from 'react';
 import { ChatEngine } from 'chat-engine';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { useClient } from 'next/client'; // Import useClient hook
 
-const IndexPage = () => {
+const VoiceChatPage = () => {
   const [myStream, setMyStream] = useState(null);
   const [peerStream, setPeerStream] = useState(null);
   const [peerId, setPeerId] = useState('');
   const [myPeer, setMyPeer] = useState(null);
 
+  useClient(); // Mark the component as a Client Component
+
+
   useEffect(() => {
     const firebaseConfig = {
-        apiKey: "AIzaSyDlbPaxkE79_QNQ8_sAO3izNvfYddLBa8Y",
-        authDomain: "gamershubtn-d9e43.firebaseapp.com",
-        projectId: "gamershubtn-d9e43",
-        storageBucket: "gamershubtn-d9e43.appspot.com",
-        messagingSenderId: "1076671216519",
-        appId: "1:1076671216519:web:3804e80c420d536814f122",
-        measurementId: "G-8BHW4H8DQL"
-      };
+      apiKey: "AIzaSyDlbPaxkE79_QNQ8_sAO3izNvfYddLBa8Y",
+      authDomain: "gamershubtn-d9e43.firebaseapp.com",
+      projectId: "gamershubtn-d9e43",
+      storageBucket: "gamershubtn-d9e43.appspot.com",
+      messagingSenderId: "1076671216519",
+      appId: "1:1076671216519:web:3804e80c420d536814f122",
+      measurementId: "G-8BHW4H8DQL"
+    };
 
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
@@ -121,3 +125,40 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
